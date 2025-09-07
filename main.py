@@ -3,6 +3,7 @@ import logging
 from dotenv import load_dotenv
 import os
 import random
+import web
 
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
@@ -114,4 +115,5 @@ async def quit_game(ctx):
     await ctx.send("Thanks for playing!")
     del active_games[channel_id]
 
+web.keep_alive
 bot.run(token)
